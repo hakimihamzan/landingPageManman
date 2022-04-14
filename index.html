@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page for real estate business">
+    <meta name="author" content="Hakimi Hamzan">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Manman - The Best Real Estate Developer</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav_logo">
+            <i class="fa-solid fa-building"></i>
+            <h1>MANMAN</h1>
+        </div>
+        <ul class="nav_ul">
+            <li><a href="#">Invest With Us</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="nav_tools">
+            <li><i class="fa-solid fa-magnifying-glass search"></i></li>
+            <li class="search_tools">
+                <div id="settings_tools" class="lang">
+                    <i class="fa-solid fa-flag-usa"></i>
+                    <p>English</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <div class="lang">
+                        <i class="fa-solid fa-group-arrows-rotate"></i>
+                        <p>Spain</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="lang">
+                        <i class="fa-solid fa-certificate"></i>
+                        <p>French</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                    <div class="lang">
+                        <i class="fa-solid fa-arrow-up-from-ground-water"></i>
+                        <p>Polish</p>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="navbar_collapse">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+    </nav>
+
+    <!-- Modal -->
+    <nav class="nav_modal">
+        <ul class="">
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Invest With Us</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Newsroom</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> About Us</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Contact</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.getElementById("settings_tools").addEventListener("click", (e) => {
+            if (!document.querySelector('.dropdown-content').classList.contains('dropdown-content-on')) {
+                document.querySelector('.dropdown-content').classList.add('dropdown-content-on')
+            } else {
+                document.querySelector('.dropdown-content').classList.remove('dropdown-content-on')
+            }
+
+            setTimeout(() => {
+                document.querySelector('.dropdown-content').classList.remove('dropdown-content-on')
+            }, 8000)
+
+        })
+
+        let navBarHide = true;
+
+        document.querySelector('.navbar_collapse').addEventListener('click', (e) => {
+            if (navBarHide) {
+                document.querySelector('.nav_modal').classList.add('slideIn')
+                navBarHide = false
+            } else {
+                navBarHide = true
+            }
+
+            setTimeout(() => {
+                document.querySelector('.nav_modal').classList.remove('slideIn')
+
+            }, 3000);
+        })
+    </script>
+</body>
+
+</html>
